@@ -1,4 +1,10 @@
-export default function RootLayout({ children }) {
+import {ReactNode} from "react";
+
+interface layoutProps {
+    children: ReactNode
+}
+
+export default function RootLayout({ children }: layoutProps) {
     return (
         <html lang="en">
             <body>
