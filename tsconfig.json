@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // 필수 옵션들
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // 사용할 라이브러리 설정
+    "module": "esnext", // 모듈 시스템 설정
+    "moduleResolution": "node", // 모듈 해석 방법 설정
+    "jsx": "preserve", // JSX 처리 방법 설정
+
+    // 필수적이지 않지만 유용한 옵션들
+    "allowJs": true, // JavaScript 파일 허용
+    "skipLibCheck": true, // 라이브러리 타입 검사 건너뜀
+    "strict": false, // 엄격한 타입 검사 설정
+    "noEmit": true, // 컴파일 시 파일 출력 안 함
+    "incremental": true, // 증분 컴파일 설정
+    "esModuleInterop": true, // ES 모듈 상호 운용성 지원
+    "resolveJsonModule": true, // JSON 모듈 해석
+    "isolatedModules": true, // 각 파일을 독립적인 모듈로 처리
+    "plugins": [
+      {
+        "name": "next" // Next.js 플러그인 설정
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts", // 포함할 경로 설정
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules" // 제외할 경로 설정
+  ]
+}
