@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Heading from "../../components/Heading";
+import Heading from "@/components/Heading";
 
 export default function RecapPage() {
     return (
@@ -7,13 +7,8 @@ export default function RecapPage() {
             <Heading>Recaps</Heading>
             <ul>
                 <li>
-                    <Link href="/recap/hollow-knight">
+                    <Link href="/recap/1">
                         Hollow Knight
-                    </Link>
-                </li>
-                <li>
-                    <Link href="/recap/stardew-valley">
-                        Stardew Valley
                     </Link>
                 </li>
             </ul>
