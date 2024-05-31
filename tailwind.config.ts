@@ -5,7 +5,12 @@ module.exports = {
         './components/**/*.{jsx,tsx}',
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                hiMelody: ['var(--font-hiMelody)', 'var(--font-dongle)', 'sans-serif'],
+                dongle: ['var(--font-dongle)', 'sans-serif']
+            }
+        },
     },
     plugins: [],
 };
