@@ -23,7 +23,10 @@
       {
         "name": "next" // Next.js 플러그인 설정
       }
-    ]
+    ],
+    "paths": {
+      "@/*" : ["./*"]
+    }
   },
   "include": [
     "next-env.d.ts", // 포함할 경로 설정
