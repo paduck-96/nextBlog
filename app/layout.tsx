@@ -2,6 +2,7 @@ import {ReactNode} from "react";
 import Link from "next/link";
 import "./global.css"
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 interface layoutProps {
     children: ReactNode
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: layoutProps) {
                     {children}
                 </main>
                 <footer className="border-t py-3 text-center text-xs">
-                    {/*해당 부분은 요구사항에 맞춰 작성될 예정*/}
+                    <Footer />
                 </footer>
             </body>
         </html>
