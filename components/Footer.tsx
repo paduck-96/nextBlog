@@ -21,7 +21,7 @@ export default function Footer() {
             <p>오늘 날짜: {data.date}</p>
             <p>오늘 접속자 수: {data.visitCount}</p>
             <p>
-                Game data and images courtesy of <a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">RAWG</a>
+                From JDK
             </p>
         </>
     );
