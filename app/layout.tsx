@@ -1,8 +1,8 @@
 import {ReactNode} from "react";
-import Link from "next/link";
 import "./global.css"
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import {dongle, hiMelody} from "./font";
 
 interface layoutProps {
     children: ReactNode
@@ -10,7 +10,7 @@ interface layoutProps {
 
 export default function RootLayout({ children }: layoutProps) {
     return (
-        <html lang="en">
+        <html lang="en" className={`${hiMelody.variable} ${dongle.variable}`}>
             <body className="bg-orange-50 flex flex-col px-4 py-2 min-h-screen">
                 <header>
                     <NavBar />
