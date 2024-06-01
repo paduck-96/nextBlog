@@ -1,5 +1,5 @@
 import Heading from "@/components/Heading";
-import {getRecap} from "@/lib/recap";
+import {getRecap} from "@/lib/recaps";
 
 interface RecapPageProps {
     params: { slug: string };
