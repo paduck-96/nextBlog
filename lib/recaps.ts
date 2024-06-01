@@ -19,9 +19,7 @@ export async function getRecap(slug: string): Promise<Recap> {
 }
 
 export async function getRecaps(): Promise<Recap[]> {
-    const files = await readdir('./content/recaps');
-    const slugs = files.filter((file) => file.endsWith('.md'))
-        .map((file) => file.slice(0, -'.md'.length));
+    const slugs = await getSlugs();
 
     const recaps: Recap[] = [];
     for (const slug of slugs) {
@@ -29,4 +27,10 @@ export async function getRecaps(): Promise<Recap[]> {
         recaps.push(recap);
     }
     return recaps;
+}
+
+export async function getSlugs(): Promise<string[]> {
+    const files = await readdir('./content/recaps');
+    return files.filter((file) => file.endsWith('.md'))
+        .map((file) => file.slice(0, -'.md'.length));
 }

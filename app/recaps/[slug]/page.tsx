@@ -1,8 +1,17 @@
 import Heading from "@/components/Heading";
-import {getRecap} from "@/lib/recaps";
+import {getRecap, getSlugs} from "@/lib/recaps";
+
+interface RecapPageParams {
+    slug: string;
+}
 
 interface RecapPageProps {
-    params: { slug: string };
+    params: RecapPageParams;
+}
+
+export async function generateStaticParams(): Promise<RecapPageParams[]> {
+    const slugs = await getSlugs();
+    return slugs.map((slug) => ({ slug }));
 }
 
 export default async function RecapPage({ params: { slug }}: RecapPageProps) {
