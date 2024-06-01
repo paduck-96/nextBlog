@@ -22,6 +22,7 @@ export async function getRecaps(): Promise<Recap[]> {
     const files = await readdir('./content/recaps');
     const slugs = files.filter((file) => file.endsWith('.md'))
         .map((file) => file.slice(0, -'.md'.length));
+
     const recaps: Recap[] = [];
     for (const slug of slugs) {
         const recap = await getRecap(slug);
