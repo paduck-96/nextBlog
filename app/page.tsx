@@ -10,14 +10,24 @@ export default function HomePage() {
             </p>
             <div className="bg-white border rounded shadow w-80
                       hover:shadow-xl sm:w-full">
-                <Link href="/recap/1"
+                <Link href="/recap/next_static"
                       className="flex flex-col sm:flex-row">
                     <img src="" alt=""
                          width="320" height="180"
                          className="rounded-t sm:rounded-l sm:rounded-r-none"
                     />
                     <h2 className="font-hiMelody font-semibold py-1 text-center sm:px-2">
-                        Next.js Review
+                        Next.js Static
+                    </h2>
+                </Link>
+                <Link href="/recap/next_server"
+                      className="flex flex-col sm:flex-row">
+                    <img src="" alt=""
+                         width="320" height="180"
+                         className="rounded-t sm:rounded-l sm:rounded-r-none"
+                    />
+                    <h2 className="font-hiMelody font-semibold py-1 text-center sm:px-2">
+                        Next.js Server
                     </h2>
                 </Link>
             </div>
