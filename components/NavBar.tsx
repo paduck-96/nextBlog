@@ -11,9 +11,9 @@ export default function NavBar() {
                     </Link>
                 </li>
                 <li className='ml-auto'>
-                    <Link href="/recap" prefetch={false}
+                    <Link href="/recaps" prefetch={false}
                           className="text-orange-800 hover:underline">
-                        Recap
+                        Recaps
                     </Link>
                 </li>
             </ul>
