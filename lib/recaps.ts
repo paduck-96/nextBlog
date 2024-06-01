@@ -10,6 +10,11 @@ export interface Recap {
     body: string;
 }
 
+export async function getFeaturedRecap(): Promise<Recap> {
+    const recaps = await getRecaps();
+    return recaps[0];
+}
+
 export async function getRecap(slug: string): Promise<Recap> {
     const text = await readFile(`./content/recaps/${slug}.md`, 'utf8');
     const { content, data: { title, date, image } } = matter(text);
@@ -26,6 +31,9 @@ export async function getRecaps(): Promise<Recap[]> {
         const recap = await getRecap(slug);
         recaps.push(recap);
     }
+
+    recaps.sort((a, b) => b.date.localeCompare(a.date));
+
     return recaps;
 }
 

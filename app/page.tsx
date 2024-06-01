@@ -1,7 +1,10 @@
 import Heading from "@/components/Heading";
 import Link from "next/link";
+import {getFeaturedRecap} from "@/lib/recaps";
 
-export default function HomePage() {
+export default async function HomePage() {
+    const recap = await getFeaturedRecap()
+
     return (
         <>
             <Heading>Paduck Simple Blog</Heading>
@@ -10,24 +13,14 @@ export default function HomePage() {
             </p>
             <div className="bg-white border rounded shadow w-80
                       hover:shadow-xl sm:w-full">
-                <Link href="/app/recaps/next_static"
+                <Link href={`/reviews/${recap.slug}`}
                       className="flex flex-col sm:flex-row">
-                    <img src="" alt=""
+                    <img src={recap.image} alt=""
                          width="320" height="180"
                          className="rounded-t sm:rounded-l sm:rounded-r-none"
                     />
                     <h2 className="font-hiMelody font-semibold py-1 text-center sm:px-2">
-                        Next.js Static
-                    </h2>
-                </Link>
-                <Link href="/app/recaps/next_server"
-                      className="flex flex-col sm:flex-row">
-                    <img src="" alt=""
-                         width="320" height="180"
-                         className="rounded-t sm:rounded-l sm:rounded-r-none"
-                    />
-                    <h2 className="font-hiMelody font-semibold py-1 text-center sm:px-2">
-                        Next.js Server
+                        {recap.title}
                     </h2>
                 </Link>
             </div>
