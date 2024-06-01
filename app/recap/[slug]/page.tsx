@@ -1,9 +1,12 @@
 import Heading from "@/components/Heading";
 import {getRecap} from "@/lib/recap";
 
-export default async function One() {
-    const review = await getRecap('1');
+interface RecapPageProps {
+    params: { slug: string };
+}
 
+export default async function RecapPage({ params: { slug }}: RecapPageProps) {
+    const review = await getRecap(slug);
 
     return (
         <>
