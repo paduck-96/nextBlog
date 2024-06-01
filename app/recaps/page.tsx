@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Heading from "@/components/Heading";
 import {getRecaps} from "@/lib/recaps";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: 'Recap',
+};
 
 export default async function RecapPages() {
     const recaps = await getRecaps();

@@ -3,10 +3,18 @@ import "./global.css"
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import {dongle, hiMelody} from "./font";
+import {Metadata} from "next";
 
 interface layoutProps {
     children: ReactNode
 }
+
+export const metadata: Metadata = {
+    title: {
+        default: 'Paduck Simple Blog',
+        template: '%s | Paduck Blog',
+    },
+};
 
 export default function RootLayout({ children }: layoutProps) {
     return (
