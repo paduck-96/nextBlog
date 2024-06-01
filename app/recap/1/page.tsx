@@ -1,17 +1,18 @@
 import Heading from "@/components/Heading";
-import {readFile} from "node:fs/promises";
-import {marked} from "marked";
+import {getRecap} from "@/lib/recap";
 
 export default async function One() {
-    const text = await readFile('./content/recap/1.md', 'utf8')
-    const html = marked(text)
+    const review = await getRecap('1');
+
+
     return (
         <>
-            <Heading>Next.js Review</Heading>
-            <img src="" alt=""
+            <Heading>{review.title}</Heading>
+            <p className="italic pb-2">{review.date}</p>
+            <img src={review.image} alt="next.js image"
                  width="640" height="360" className="mb-2 rounded"
             />
-            <article dangerouslySetInnerHTML={{__html: html}}
+            <article dangerouslySetInnerHTML={{__html: review.body}}
                      className="max-w-screen-sm prose prose-slate"
             />
         </>
