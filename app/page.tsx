@@ -13,7 +13,7 @@ export default async function HomePage() {
             </p>
             <div className="bg-white border rounded shadow w-80
                       hover:shadow-xl sm:w-full">
-                <Link href={`/reviews/${recap.slug}`}
+                <Link href={`/recaps/${recap.slug}`}
                       className="flex flex-col sm:flex-row">
                     <img src={recap.image} alt=""
                          width="320" height="180"
